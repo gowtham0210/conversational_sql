@@ -1,0 +1,25 @@
+Basic retrieval (SELECT)
+Joins (JOIN, INNER JOIN)
+Filtering (WHERE, LIKE, IN)
+Sorting & Limits (ORDER BY, LIMIT)
+Aggregations (COUNT, SUM, AVG, MAX, MIN)
+Subqueries (Nested Queries)
+
+Basic Queries (Single Table Retrieval)
+    "Show all students."
+    "List all department names."
+    "Get the names and emails of all students."
+    "How many students are enrolled?"
+    "Show all courses offered."
+Intermediate Queries (Joins & Filtering)
+    "List students with their department names."
+    "Get all students who enrolled after 2022-01-01."
+    "Show all students in the Computer Science department."
+    "Find courses with more than 3 credits."
+    "Show the latest 5 enrollments."
+Advanced Queries (Aggregations, Nested Queries, Multiple Joins)
+    "Count the number of students in each department."
+    "Get the highest grade in each course."
+    "Find students who have never been absent."
+    "List students who took the 'Machine Learning' course and their grades."
+    "Show the attendance percentage for each student."
