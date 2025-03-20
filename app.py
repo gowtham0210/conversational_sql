@@ -1,9 +1,10 @@
 import streamlit as st # type: ignore
 from nl_to_sql import convert_nl_to_sql,clean_sql_output  # Importing the function
 import sqlite3
+import pandas as pd
 DATABASE_NAME = "student_database.db"
 # Streamlit UI
-st.title("Conversational SQL Interface")
+st.title("Conversational SQL")
 st.write("Ask your database in natural language!")
 
 # User input
@@ -16,6 +17,7 @@ if st.button("Submit") and user_query:
 
     if sql_query:
         st.write("Generated SQL Query:")
+        
         st.code(sql_query, language="sql")
 
         # Connect to SQLite and execute the query
@@ -23,11 +25,14 @@ if st.button("Submit") and user_query:
             conn = sqlite3.connect(DATABASE_NAME)
             cursor = conn.cursor()
             cursor.execute(sql_query)
+            column_names = [description[0] for description in cursor.description]
             results = cursor.fetchall()
+            
 
             if results:
                 st.write("Query Results:")
-                st.dataframe(results)  # Display results in a table
+                df = pd.DataFrame(results, columns=column_names)
+                st.dataframe(df)  # Display results in a table
             else:
                 st.write("No results found.")
 

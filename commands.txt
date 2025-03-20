@@ -1,0 +1,2 @@
+#Activate venv
+conversational_sql_env\Scripts\activate.bat
